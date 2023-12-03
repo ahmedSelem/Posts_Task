@@ -1,0 +1,51 @@
+<section class="posts-component">
+    <div class="container">
+        @if (!isLoading){
+            <div class="row justify-content-center">
+                @for (item of postsList; track $index) {
+                    <div class="col-lg-7">
+                        <div class="post-number">
+                            <span class="text-center rounded-circle d-block">{{ (currentNumPage) * 5 + $index + 1 }}</span>
+                        </div>
+                        <div class="post-item card rounded-0 border-0 border-start ms-3 pt-2">
+                            <a [routerLink]="['details', item.id]" class="card-body text-decoration-none pt-0">
+                                <h5 class="card-title fw-bold">{{item.title}}</h5>
+                                <p class="card-text">{{item.body}}</p>
+                            </a>
+                            <a (click)="openModal(item, $index)" class="card-link cursor-pointer rounded-circle text-center">
+                                <i class="fa-solid fa-pen text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        } @else {
+            <div class="loading-box">
+                <app-spinner></app-spinner>
+            </div>
+        }
+        <div class="row justify-content-end">
+            <div class="col-md-10 d-flex justify-content-end mt-5">
+                <nav aria-label="Page navigation ">
+                    <ul class="pagination justify-content-center mb-0">
+                        <li class="page-item prev-icon" [ngClass]="{'nav-disabled': currentNumPage == 0}">
+                            <a class="page-link cursor-pointer" (click)="onPrevPage()">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </a>
+                        </li>
+                        @for (item of paginationNum; track $index) {
+                        <li class="page-item" [ngClass]="{'nav-active': $index == currentNumPage}">
+                            <a class="page-link cursor-pointer" (click)="onFetchPosts($index , 5)">{{item}}</a>
+                        </li>
+                        }
+                        <li class="page-item next-icon" [ngClass]="{'nav-disabled': currentNumPage == 4}">
+                            <a class="page-link cursor-pointer" (click)="onNextPage()">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>

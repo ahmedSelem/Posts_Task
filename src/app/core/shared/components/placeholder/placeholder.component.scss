@@ -1,0 +1,11 @@
+.placeholder-glow {
+    .placeholder {
+        height: 38px;
+        &.label {
+            height: 20px;
+        }
+        &.text-area {
+            height: 134px;
+        }
+    }
+}

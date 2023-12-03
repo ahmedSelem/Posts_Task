@@ -1,0 +1,61 @@
+
+.posts-component {
+    padding: 50px 0;
+    .post-number {
+        span {
+            width: 30px;
+            height: 30px;
+            background: #2ecc715c;
+            line-height: 30px;
+            margin-left: 2px;
+            font-size: 12px;
+        }
+    }
+    .post-item {
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 5%;
+            width: 20%;
+            height: 1px;
+            background-color: #ccc;
+        }
+        .card-body {
+            .card-title {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                height: 1.2em; 
+                white-space: nowrap;
+                line-clamp: 1;
+                width: 90%;
+            }
+            .card-text {
+                font-size: 14px;
+            }
+        }
+        .card-link {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            background: var(--mainColor);
+            opacity: 0;
+            visibility: hidden;
+            transition: all .5s ease;
+            i {
+                font-size: 14px;
+            }
+        }
+        &:hover {
+            background-color: #cccccc21;
+            .card-link {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,14 @@
+.modal-header {
+    .close {
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+.modal-body {
+    .modal-footer {
+        .btn {
+            background-color: var(--mainColor);
+        }
+    }
+}

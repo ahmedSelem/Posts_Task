@@ -1,0 +1,21 @@
+:root {
+    --mainColor: #2ecc71;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.invalid-error {
+    font-size: 14px;
+}
+.loading-box {
+    height: 90vh;
+}
+.breadcrumb {
+    .breadcrumb-item {
+        a {
+            color: var(--mainColor);
+        }
+    }
+}
