@@ -2,6 +2,5 @@ export interface postInterface {
     body: string,
     id: number,
     title: string,
-    userId: number,
-    postUpdated: postInterface
+    userId: number
 }
