@@ -24,7 +24,7 @@ Follow these steps to set up and run the Angular app:
    ```bash
    npm install
 
-3.  **Run the Development Server:**
+3. **Run the Development Server:**
 
    ```bash
    ng serve --o
