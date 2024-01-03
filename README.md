@@ -18,3 +18,13 @@ Follow these steps to set up and run the Angular app:
    ```bash
    git clone https://github.com/your-username/your-angular-app.git
    cd your-angular-app
+
+2. **Install Dependencies::**
+
+   ```bash
+   npm install
+
+3.  **Run the Development Server:**
+
+   ```bash
+   ng serve --o
